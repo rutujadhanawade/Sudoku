@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-
+"""
 a = ([[4, 0, 9, 0, 0, 8, 0, 3, 0],
       [7, 5, 0, 0, 3, 2, 0, 1, 8],
       [0, 0, 0, 5, 0, 0, 2, 0, 6],
@@ -10,20 +10,37 @@ a = ([[4, 0, 9, 0, 0, 8, 0, 3, 0],
       [0, 0, 8, 4, 0, 0, 0, 0, 9],
       [0, 1, 0, 0, 0, 9, 0, 4, 0],
       [2, 0, 0, 7, 1, 0, 8, 5, 0]])
+"""
+a = ([[0, 0, 0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 0, 0]])
 
 
 def index(request):
-    print(len(a))
-    return render(request, 'userApp/page1.html', {'a': a})
+    return render(request, 'userApp/intro.html')
 
 
-def answer(request):
+def solve(request):
+    return render(request, 'userApp/solve.html')
+
+
+def make_que(request):
+    return render(request, 'userApp/question.html', {'a': a})
+
+
+def find_ans(request):
     global a
     ans_arr = main(a)
     ans = 1
     # if a[0][0] == -1:
     #    ans = 1
-    return render(request, 'userApp/page2.html', {'ans_arr': ans_arr, 'ans': ans, 'msg': 'No solution possible.. :('})
+    return render(request, 'userApp/answer.html', {'ans_arr': ans_arr, 'ans': ans, 'msg': 'No solution possible.. :('})
 
 
 def isValidPos(arr, row, col, val):

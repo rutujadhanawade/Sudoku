@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Intro</title>
+</head>
+<body>
+    <center>
+        <h1>Welcome to Sudoku Club !!</h1><br>
+        <p>Do you want to solve a puzzle ?? </p>
+        <button type="submit" onclick="location.href = '{% url 'solve' %}' ">Start solving</button><br>
+        <p>Do you want to make a puzzle ?? </p>
+        <button type="submit" onclick="location.href = '{% url 'make_que' %}' ">Start coding</button>
+    </center>
+</body>
+</html>

@@ -14,16 +14,15 @@ tr,td{
     border:1px solid brown;
     border-radius: 10px;
     border-collapse: collapse;
-    height:40px;
-    padding: 15px;
+    padding: 20px;
+    width: 45px;
     text-align: center;
     text-color: red;
     font-size: 20px;
 }
 table{
     border-collapse: collapse;
-    margin-left: 400px;
-    margin-top: 25px;
+    margin-top: 0px;
 }
 
 tr:nth-child(n+4):nth-child(-n+6){
@@ -41,7 +40,9 @@ p{
 </style>
 </head>
 <body>
+  <center>
     {% if ans == 1%}
+      <h1>Answer to ur question : </h1>
     <table style="width:40%">
         <colgroup>
             <col span="3" class="in" style="background-color: #ffcc99">
@@ -61,5 +62,6 @@ p{
         <p>{{msg}}</p>
     {% endif %}
 
+  </center>
 </body>
 </html>

@@ -14,15 +14,14 @@ tr,td{
     border:1px solid brown;
     border-radius: 11px;
     border-collapse: collapse;
-    height:40px;
-    padding: 15px;
+    padding: 20px;
+    width: 45px;
     text-align: center;
     text-color: red;
     font-size: 20px;
 }
 table{
     border-collapse: collapse;
-    margin-left: 400px;
     margin-top: 20px;
 
 }
@@ -41,7 +40,6 @@ button{
     border-radius: 10px;
     font-size: 30px;
     margin-top:30px;
-    margin-left: 585px;
 }
 
 button:hover{
@@ -50,10 +48,22 @@ button:hover{
     border: 2px solid black;
 }
 
+.number{
+    width: 18px;
+    border-radius: 2px;
+    align: center;
+}
+
+.number:hover{
+    background-color: #dff084;
+    border: 1px solid brown;
+}
 
     </style>
 </head>
 <body>
+<center>
+<h1>Enter your Sudoku puzzle..</h1>
 <table style="width:40%">
     <colgroup>
         <col span="3" class="in" style="background-color: #ffcc99">
@@ -62,17 +72,15 @@ button:hover{
     </colgroup>
     {% for row in a %}
     <div id=element1>
-        <tr> {% for ele in row %}
-            {% if ele %}
-            <td> {{ele}}</td>
-            {% else %}
-             <td>  </td>
-            {% endif %}
+        <tr>
+            {% for ele in row %}
+            <td> <input type="text" class="number" value=" "></td>
             {% endfor %}
         </tr>
     </div>
     {% endfor %}
 </table>
-<button type="submit" onclick="location.href = '{% url 'answer' %}' ">SOLVE</button>
+<button type="submit" onclick="location.href = '{% url 'find_ans' %}' ">SUBMIT</button>
+</center>
 </body>
 </html>
