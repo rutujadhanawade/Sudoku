@@ -1,4 +1,4 @@
-import sys
+"""import sys
 
 
 def isValidPos(a, row, col, val):
@@ -51,3 +51,4 @@ def main():
         for j in (1, 10, 1):
             print(arr[i][j])
     return arr
+"""
